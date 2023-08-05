@@ -1,0 +1,39 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{16D114A0-D0FE-4067-893E-6881E0DEE441}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="..\..\..\TPG\3\Assignment\Assignm 4 (SD)+\Assignm 4 (SD)+\KrugerParkProject.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="KrugerParkProject.cbproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="KrugerParkProject">
+        <MSBuild Projects="KrugerParkProject.cbproj"/>
+    </Target>
+    <Target Name="KrugerParkProject:Clean">
+        <MSBuild Projects="KrugerParkProject.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="KrugerParkProject:Make">
+        <MSBuild Projects="KrugerParkProject.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="KrugerParkProject;KrugerParkProject"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="KrugerParkProject:Clean;KrugerParkProject:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="KrugerParkProject:Make;KrugerParkProject:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
