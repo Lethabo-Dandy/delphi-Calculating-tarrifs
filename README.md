@@ -6,7 +6,7 @@ An application that calculates tariffs for zoo visitors, tracks memberships, and
 
     >  C++
     >  C++ Builder (RAD Studio)
-    >   Oracle SQL
+    >  Oracle SQL
 
 💡 Features:
 
